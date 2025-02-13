@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply overflow-hidden text-primary font-secondary bg-white;
+  }
+  .h1 {
+    @apply text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2;
+  }
+  .section {
+    @apply h-screen w-screen;
+  }
+  .btn {
+    @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
+  }
+}
+/* Marquee container */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Apply to the text */
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -16px; /* gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 16px; /* gutter size */
+}
+
+.my-masonry-grid img {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.my-masonry-grid img:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Tailwind's screen breakpoints */
+@media (max-width: 640px) {
+  .btn {
+    bottom: 3rem; /* Adjust bottom positioning on mobile */
+  }
+}
+
+@media (max-width: 1024px) {
+  .btn {
+    bottom: 4rem; /* Adjust bottom positioning for tablets */
+  }
+}
